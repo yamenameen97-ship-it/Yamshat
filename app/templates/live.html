@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>البث المباشر</h2>
+<video id="local" autoplay playsinline width="100%"></video>
+<script>
+navigator.mediaDevices.getUserMedia({video:true, audio:false})
+.then(stream => {
+    document.getElementById("local").srcObject = stream;
+})
+.catch(() => console.log("Camera permission denied"));
+</script>
+{% endblock %}
