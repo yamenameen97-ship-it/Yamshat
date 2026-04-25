@@ -12,7 +12,9 @@ from .sockets.notify_socket import register_notify
 
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__,
+            static_folder='static',
+            template_folder='templates')
     app.config.from_object(Config)
 
     os.makedirs(app.config["UPLOAD_FOLDER"], exist_ok=True)
