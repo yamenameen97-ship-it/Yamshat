@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 <h2>البث المباشر</h2>
 <video id="local" autoplay playsinline width="100%"></video>
 <script>
